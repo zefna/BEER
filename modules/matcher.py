@@ -28,7 +28,7 @@ class BeerMatcher:
         beer_props = dict()
 
         print('Введите крепость пива')
-        beer_props['alc'] = float(int(input()) / 100)
+        beer_props['Алкоголь:'] = float(int(input()) / 100)
 
         return beer_props
 

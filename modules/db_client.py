@@ -25,7 +25,6 @@ class _ClientCSV(_BaseClient):
         self._DATAFRAME = pd.read_csv(self.DB_PATH, sep='|')
         self._configure_column_types()
 
-    @abstractmethod
     def select(self, props: dict):
         selection = sum([self._DATAFRAME[prop] >= value for prop, value in props.items()]) > 0
         return self._DATAFRAME[selection]
