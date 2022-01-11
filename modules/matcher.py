@@ -26,40 +26,30 @@ class BeerMatcher:
     def _user_interact_stage():
         beer_props = dict()
 
+        def beer_props_update(prop):
+            _in = input()
+            if len(_in) == 0:
+                pass
+            elif len(_in) < 3:
+                beer_props[prop] = float(int(_in) / 100)
+            else:
+                beer_props[prop] = (_in)
+            return beer_props
+
         print('Введите крепость пива')
-        _in = input()
-        if len(_in) == 0:
-            pass
-        else:
-            beer_props['Алкоголь:'] = float(int(_in) / 100)
+        beer_props_update('Алкоголь:')
 
         print('Введите плотность пива')
-        _in = input()
-        if len(_in) == 0:
-            pass
-        else:
-            beer_props['Плотность:'] = float(int(_in) / 100)
+        beer_props_update('Плотность:')
 
         print('Введите цвет пива (светлое, тёмное, полутёмное)')
-        _in = input()
-        if len(_in) == 0:
-            pass
-        else:
-            beer_props['Цвет:'] = _in
+        beer_props_update('Цвет:')
 
         print('Выберите фильтрацию (фильтрованное, нефильтрованное)')
-        _in = input()
-        if len(_in) == 0:
-            pass
-        else:
-            beer_props['Фильтрация:'] = _in
+        beer_props_update('Фильтрация:')
 
         print('Введите страну изготовления')
-        _in = input()
-        if len(_in) == 0:
-            pass
-        else:
-            beer_props['Страна:'] = _in
+        beer_props_update('Страна:')
 
         return beer_props
 
